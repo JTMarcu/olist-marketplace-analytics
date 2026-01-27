@@ -1,0 +1,33 @@
+name: 'marketplace_analytics'
+version: '1.0.0'
+config-version: 2
+
+# This profile name must match the one in your profiles.yml (or dbt Cloud settings)
+profile: 'marketplace_analytics'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# GLOBAL CONFIGURATION
+models:
+  marketplace_analytics:
+    # Config for the Staging Layer (Lightweight views)
+    staging:
+      +materialized: view
+      +schema: staging
+      +tags: ["daily"]
+    
+    # Config for the Marts Layer (High-performance tables)
+    marts:
+      +materialized: table
+      +schema: marts
+      +tags: ["daily"]
