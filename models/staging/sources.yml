@@ -1,0 +1,40 @@
+version: 2
+
+sources:
+  - name: olist
+    database: cudata  # Match your BigQuery Project ID
+    schema: raw_olist
+    description: "Raw Olist E-Commerce data from Brazil"
+    tables:
+      # --- CORE TRANSACTIONS ---
+      - name: orders
+        description: "Order headers (ID, status, timestamps)"
+        columns:
+          - name: order_id
+            tests: [unique, not_null]
+      
+      - name: items
+        description: "Line items (products) within an order"
+        
+      - name: payments
+        description: "Payment methods and installments (one order = many payments)"
+
+      - name: reviews
+        description: "Customer satisfaction surveys"
+
+      # --- ENTITIES ---
+      - name: products
+        description: "Product metadata (dimensions, category)"
+        
+      - name: sellers
+        description: "Merchant information and location"
+        
+      - name: customers
+        description: "Customer profiles. Key: customer_unique_id is the real human."
+
+      - name: geolocation
+        description: "Zip code (prefix) to Lat/Lng mapping"
+
+      # --- REFERENCE ---
+      - name: product_category_name_translation
+        description: "Maps Portuguese category names to English"
