@@ -25,11 +25,12 @@
 
 ## 4. Marts Layer (Business Value)
 *Goal: Final tables for the Dashboard.*
-- [ ] `dim_customers.sql` (Single Customer View)
-- [ ] `dim_sellers.sql` (Seller location & performance)
-- [ ] `mart_marketplace_performance.sql` (Revenue, Delivery Delays, Review Scores)
+- [x] `dim_customers.sql` (Single Customer View)
+- [x] `dim_products.sql` (Product attributes & translation)
+- [x] `dim_sellers.sql` (Seller location & performance)
+- [x] `mart_marketplace_performance.sql` (Revenue, Delays, Reviews)
 
 ## 5. Quality & Documentation
-- [ ] Add `unique` and `not_null` tests to all primary keys
-- [ ] Add descriptions to `schema.yml` for all Mart columns
-- [ ] Generate Lineage Graph for README
+- [x] Add `unique` and `not_null` tests to all primary keys
+- [x] Add descriptions to `schema.yml` for all Mart columns
+- [x] Generate Lineage Graph for README

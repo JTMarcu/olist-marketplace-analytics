@@ -25,6 +25,9 @@ models/
 │   ├── _schema.yml      # Documentation for raw tables
 │   ├── sources.yml      # Connection to BigQuery 'raw_olist'
 │   └── stg_orders.sql   # Cleaning logic
+├── intermediate/        # Logic & Joins
+│   ├── int_orders_enriched.sql
+│   └── int_customer_history.sql
 └── marts/               # Business Logic (The "Product")
     ├── core/            # Key entities (Sellers, Products)
     └── finance/         # Metric tables (Marketplace Performance)
