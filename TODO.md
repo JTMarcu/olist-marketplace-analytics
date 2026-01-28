@@ -34,3 +34,9 @@
 - [x] Add `unique` and `not_null` tests to all primary keys
 - [x] Add descriptions to `schema.yml` for all Mart columns
 - [x] Generate Lineage Graph for README
+
+## 6. Engineering Upgrades (The "Senior" Level)
+*Goal: Scale, optimize, and automate the pipeline.*
+- [ ] **Migrate project to dbt Core CLI** (Move to VS Code)
+- [ ] **Implement CI/CD** (GitHub Actions for automated testing)
+- [ ] **Optimize `stg_orders`** (Implement incremental loading logic)
