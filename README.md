@@ -15,50 +15,10 @@ This project follows the **Medallion Architecture**:
 * **Intermediate (`int_`)**: Complex join logic (e.g., enriching orders with items and payments).
 * **Marts (`dim_` / `fact_`)**: Star Schema optimized for BI tools (Looker, Tableau).
 
-```mermaid
-graph LR
-    subgraph Sources [Raw Data (BigQuery)]
-        Orders[Raw Orders]
-        Items[Raw Items]
-        Reviews[Raw Reviews]
-        Sellers[Raw Sellers]
-    end
+## 🕸️ Data Lineage
+Below is the DAG (Directed Acyclic Graph) showing dependencies from raw sources to final marts.
 
-    subgraph Staging [Staging Layer (Views)]
-        stg_orders(stg_orders)
-        stg_items(stg_items)
-        stg_reviews(stg_reviews)
-        stg_sellers(stg_sellers)
-    end
-
-    subgraph Intermediate [Intermediate Layer (Logic)]
-        int_enriched[int_orders_enriched]
-        int_history[int_customer_history]
-    end
-
-    subgraph Marts [Marts Layer (Business Value)]
-        perf[mart_marketplace_performance]
-        dim_cust[dim_customers]
-        dim_sell[dim_sellers]
-    end
-
-    Orders --> stg_orders
-    Items --> stg_items
-    Reviews --> stg_reviews
-    Sellers --> stg_sellers
-
-    stg_orders & stg_items & stg_sellers --> int_enriched
-    stg_orders --> int_history
-
-    int_enriched & stg_reviews --> perf
-    int_history --> dim_cust
-    stg_sellers --> dim_sell
-
-    style perf fill:#00C853,stroke:#333,stroke-width:2px,color:white
-    style dim_cust fill:#00C853,stroke:#333,stroke-width:2px,color:white
-
-```
-
+![Data Lineage Graph](assets/lineage_graph.png)
 ## 🕸️ Data Lineage
 
 Below is the generated DAG (Directed Acyclic Graph) showing dependencies from raw sources to final marts.
