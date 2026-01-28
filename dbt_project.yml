@@ -3,7 +3,7 @@ version: '1.0.0'
 config-version: 2
 
 # This profile name must match the one in your profiles.yml (or dbt Cloud settings)
-profile: 'marketplace_analytics'
+profile: 'olist_marketplace'
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]

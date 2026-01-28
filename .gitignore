@@ -212,3 +212,8 @@ target/
 dbt_packages/
 logs/
 # end dbt Cloud content
+
+# GCP Service Account Keys (NEVER commit these!)
+**/service-account*.json
+**/gcp-credentials*.json
+**/keyfile*.json
