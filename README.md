@@ -1,4 +1,6 @@
-# Olist Marketplace Analytics 🇧🇷
+# Olist Marketplace Analytics
+
+[![dbt CI](https://github.com/JTMarcu/olist-marketplace-analytics/actions/workflows/dbt_ci.yml/badge.svg)](https://github.com/JTMarcu/olist-marketplace-analytics/actions/workflows/dbt_ci.yml) 🇧🇷
 
 ![dbt](https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white)
 ![Google BigQuery](https://img.shields.io/badge/Google_BigQuery-669DF6?style=for-the-badge&logo=googlebigquery&logoColor=white)
