@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Single Customer View with lifetime metrics."
+    columns:
+      - name: customer_unique_id
+        description: "Primary key. Unique identifier for a customer."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_products
+    description: "Product catalog with dimensions and categories."
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_sellers
+    description: "Seller registry and location data."
+    columns:
+      - name: seller_id
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_marketplace_performance
+    description: "Fact table combining orders, revenue, and reviews for analysis."
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+      - name: review_score
+        description: "1-5 star rating provided by the customer."

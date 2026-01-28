@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_orders_enriched
+    description: "Orders joined with line items and payments."
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+
+  - name: int_customer_history
+    description: "Aggregated metrics per customer."
+    columns:
+      - name: customer_unique_id
+        tests:
+          - unique
+          - not_null
