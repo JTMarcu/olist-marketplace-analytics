@@ -37,4 +37,5 @@ sources:
 
       # --- REFERENCE ---
       - name: product_category_name_translation
+        identifier: category
         description: "Maps Portuguese category names to English"

@@ -9,19 +9,19 @@
 
 ## 2. Staging Layer (Standardization)
 *Goal: Rename columns, cast data types, and handle nulls.*
-- [ ] `stg_orders.sql` (Cast timestamps)
-- [ ] `stg_items.sql` (Standardize price columns)
-- [ ] `stg_products.sql` (Join with translation table for English names)
-- [ ] `stg_customers.sql` (Map `customer_id` to `customer_unique_id`)
-- [ ] `stg_sellers.sql` (Standardize location data)
-- [ ] `stg_payments.sql` (Prepare for aggregation)
-- [ ] `stg_geolocation.sql` (Deduplicate zip codes)
-- [ ] `stg_reviews.sql` (Handle text cleaning)
+- [x] `stg_orders.sql` (Cast timestamps)
+- [x] `stg_items.sql` (Standardize price columns)
+- [x] `stg_products.sql` (Join with translation table for English names)
+- [x] `stg_customers.sql` (Map `customer_id` to `customer_unique_id`)
+- [x] `stg_sellers.sql` (Standardize location data)
+- [x] `stg_payments.sql` (Prepare for aggregation)
+- [x] `stg_geolocation.sql` (Deduplicate zip codes)
+- [x] `stg_reviews.sql` (Handle text cleaning)
 
 ## 3. Intermediate Layer (Logic & Joins)
 *Goal: Pre-calculation to simplify Marts.*
-- [ ] `int_orders_enriched.sql` (Join Orders + Items + Payments)
-- [ ] `int_customer_history.sql` (Calculate lifetime value/order count)
+- [x] `int_orders_enriched.sql` (Join Orders + Items + Payments)
+- [x] `int_customer_history.sql` (Calculate lifetime value/order count)
 
 ## 4. Marts Layer (Business Value)
 *Goal: Final tables for the Dashboard.*
